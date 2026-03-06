@@ -15,7 +15,6 @@ public class Notas {
                     notaValida = false;
                 } else {
                     notaValida = true;
-
                     System.out.println(nota);
 
                     if (nota >= 7) {
