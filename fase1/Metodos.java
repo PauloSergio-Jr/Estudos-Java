@@ -1,3 +1,5 @@
+package fase1;
+
 public class Metodos {
     static void saudar(String nome) {
         System.out.println("Ola, " + nome + "! Bem vindo");

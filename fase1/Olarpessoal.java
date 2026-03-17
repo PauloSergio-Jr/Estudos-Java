@@ -1,3 +1,5 @@
+package fase1;
+
 public class Olarpessoal {
     public static void main(String[] args) {
         if (args.length > 0) {
