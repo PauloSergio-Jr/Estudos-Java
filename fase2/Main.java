@@ -5,31 +5,32 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
-        Carro carro1 = new Carro();
 
         System.out.println("=== Cadastro de Veiculo 1 ===");
 
         System.out.println("Digite a marca:");
-        carro1.marca = leitor.nextLine();
+        String marca = leitor.nextLine();
         System.out.println("Digite o modelo:");
-        carro1.modelo = leitor.nextLine();
+        String modelo = leitor.nextLine();
         System.out.println("Digite o ano:");
-        carro1.ano = leitor.nextInt();
+        int ano = leitor.nextInt();
         leitor.nextLine();
 
-        carro1.descricao();
+        Carro carro1 = new Carro(marca, modelo, ano);
 
-        Carro carro2 = new Carro();
+        carro1.descricao();
 
         System.out.println("=== Cadastro de Veiculo 2 ===");
 
         System.out.println("Digite a marca:");
-        carro2.marca = leitor.nextLine();
+        marca = leitor.nextLine();
         System.out.println("Digite o modelo:");
-        carro2.modelo = leitor.nextLine();
+        modelo = leitor.nextLine();
         System.out.println("Digite o ano:");
-        carro2.ano = leitor.nextInt();
+        ano = leitor.nextInt();
         leitor.nextLine();
+
+        Carro carro2 = new Carro(marca, modelo, ano);
 
         carro2.descricao();
         leitor.close();
