@@ -33,6 +33,16 @@ public class Main {
         Carro carro2 = new Carro(marca, modelo, ano);
 
         carro2.descricao();
+
+        Animal animal1 = new Animal("animal1");
+        animal1.fazerSom();
+
+        Cachorro cachorro1 = new Cachorro("cachorro1");
+        cachorro1.fazerSom();
+
+        Gato gato1 = new Gato("gato1");
+        gato1.fazerSom();
+
         leitor.close();
 
     }
