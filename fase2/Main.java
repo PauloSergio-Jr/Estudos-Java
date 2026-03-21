@@ -34,6 +34,8 @@ public class Main {
 
         carro2.descricao();
 
+        // Animal
+
         Animal animal1 = new Animal("animal1");
         animal1.fazerSom();
 
@@ -42,6 +44,16 @@ public class Main {
 
         Gato gato1 = new Gato("gato1");
         gato1.fazerSom();
+
+        // Funcionario
+
+        Funcionario f1 = new Funcionario("Paulo", 3000);
+        f1.calcularBonus();
+        f1.exibirInfo();
+
+        Gerente g1 = new Gerente("Anelise", 5000);
+        g1.calcularBonus();
+        g1.exibirInfo();
 
         leitor.close();
 
