@@ -55,6 +55,26 @@ public class Main {
         g1.calcularBonus();
         g1.exibirInfo();
 
+        Funcionario[] equipe = new Funcionario[4];
+        equipe[0] = new Funcionario("Paulo", 3000);
+        System.out.println(equipe[0].getNome() + " -> Bônus: " + equipe[0].calcularBonus());
+        equipe[1] = new Funcionario("Ana", 2500);
+        System.out.println(equipe[1].getNome() + " -> Bônus: " + equipe[1].calcularBonus());
+        equipe[2] = new Gerente("Carlos", 5000);
+        System.out.println(equipe[2].getNome() + " -> Bônus: " + equipe[2].calcularBonus());
+        equipe[3] = new Gerente("Maria", 6000);
+        System.out.println(equipe[3].getNome() + " -> Bônus: " + equipe[3].calcularBonus());
+
+        System.out.printf("Total da folha: %.1f", equipe[0].calcularFolha() + equipe[1].calcularFolha()
+                + equipe[2].calcularFolha() + equipe[3].calcularFolha());
+        System.out.println();
+
+        Produto p1 = new Produto("Capa de Banco - celta", 200);
+        System.out.println(p1.getDescricao());
+
+        Funcionario ane = new Funcionario("Anelise", 7500);
+        System.out.println(ane.getDescricao());
+
         leitor.close();
 
     }

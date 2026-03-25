@@ -1,6 +1,6 @@
 package fase2;
 
-public class Funcionario {
+public class Funcionario implements Descricavel {
     private String nome;
     private double salario;
 
@@ -24,9 +24,18 @@ public class Funcionario {
         return salario * 0.10;
     }
 
+    double calcularFolha() {
+        return salario + calcularBonus();
+    }
+
     public Funcionario(String nome, double salario) {
         this.nome = nome;
         this.salario = salario;
+    }
+
+    @Override
+    public String getDescricao() {
+        return "Funcionário: " + getNome() + " - Salário: R$ " + getSalario();
     }
 
     void exibirInfo() {
