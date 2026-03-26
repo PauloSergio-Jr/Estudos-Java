@@ -75,6 +75,15 @@ public class Main {
         Funcionario ane = new Funcionario("Anelise", 7500);
         System.out.println(ane.getDescricao());
 
+        ProdutoNacional carteira = new ProdutoNacional("carteira", 75);
+        carteira.calcularImposto();
+        carteira.getDescricao();
+        System.out.println();
+
+        ProdutoImportado samsungS22 = new ProdutoImportado("Samsung S22 128gb", 2800);
+        samsungS22.calcularImposto();
+        samsungS22.getDescricao();
+
         leitor.close();
 
     }
