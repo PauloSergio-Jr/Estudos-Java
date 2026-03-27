@@ -83,6 +83,15 @@ public class Main {
         ProdutoImportado samsungS22 = new ProdutoImportado("Samsung S22 128gb", 2800);
         samsungS22.calcularImposto();
         samsungS22.getDescricao();
+        System.out.println();
+
+        ContaBancaria c1 = new ContaBancaria(0);
+        c1.depositar(1000);
+        c1.exibirSaldo();
+        c1.sacar(300);
+        c1.exibirSaldo();
+        c1.sacar(900);
+        c1.exibirSaldo();
 
         leitor.close();
 
