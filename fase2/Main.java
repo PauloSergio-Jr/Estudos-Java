@@ -92,6 +92,40 @@ public class Main {
         c1.exibirSaldo();
         c1.sacar(900);
         c1.exibirSaldo();
+        System.out.println();
+
+        System.out.println("=== Relatório de Estoque ===");
+
+        Produto2 camiseta = new Produto2("camiseta", 50, 10);
+        camiseta.valorTotalEstoque();
+        camiseta.descricaoProduto();
+
+        Produto2 calça = new Produto2("calça", 120, 5);
+        calça.valorTotalEstoque();
+        calça.descricaoProduto();
+
+        Produto2 tenis = new Produto2("tenis", 200, 3);
+        tenis.valorTotalEstoque();
+        tenis.descricaoProduto();
+
+        System.out.printf("Valor total do estoque: %.2f",
+                camiseta.valorTotalEstoque() + calça.valorTotalEstoque() + tenis.valorTotalEstoque());
+        System.out.println();
+
+        ProdutoPerecivel[] estoque = {
+                new ProdutoPerecivel("leite integral", 5, 10, "2026-02-20"),
+                new ProdutoPerecivel("queijo", 15, 7, "2026-03-30"),
+                new ProdutoPerecivel("salame", 25, 15, "2026-07-15"),
+                new ProdutoPerecivel("iorgute", 7, 30, "2026-02-29")
+
+        };
+
+        System.out.println("=== Produtos Vencidos ===");
+        for (ProdutoPerecivel p : estoque) {
+            if (p.estaVencido("2026-03-29")) {
+                System.out.println(p.getNome() + " - Venceu em: " + p.getDataValidade());
+            }
+        }
 
         leitor.close();
 
