@@ -1,7 +1,7 @@
 package fase2;
 
-public class Animal {
-    String nome;
+public abstract class Animal {
+    private String nome;
 
     public String getNome() {
         return nome;
@@ -15,7 +15,9 @@ public class Animal {
         this.nome = nome;
     }
 
-    void fazerSom() {
-        System.out.println("...");
+    public abstract void fazerSom();
+
+    public void comer() {
+        System.out.println(getNome() + " Está comendo!");
     }
 }

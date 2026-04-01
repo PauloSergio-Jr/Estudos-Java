@@ -36,13 +36,12 @@ public class Main {
 
         // Animal
 
-        Animal animal1 = new Animal("animal1");
-        animal1.fazerSom();
-
         Cachorro cachorro1 = new Cachorro("cachorro1");
+        cachorro1.comer();
         cachorro1.fazerSom();
 
         Gato gato1 = new Gato("gato1");
+        gato1.comer();
         gato1.fazerSom();
 
         // Funcionario
