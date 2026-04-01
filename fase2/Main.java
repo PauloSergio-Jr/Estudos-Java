@@ -112,6 +112,19 @@ public class Main {
                 camiseta.valorTotalEstoque() + calça.valorTotalEstoque() + tenis.valorTotalEstoque());
         System.out.println();
 
+        System.out.println("=== Comparar Produtos ===");
+
+        if (camiseta.comparar(tenis) < 0) {
+            System.out.println(
+                    "O produto: " + tenis.getNome() + " é mais caro que o produto: " + camiseta.getNome() + "!");
+        } else if (camiseta.comparar(tenis) > 0) {
+            System.out.println(
+                    "O produto: " + camiseta.getNome() + " é mais caro que o produto: " + tenis.getNome() + "!");
+        } else {
+            System.out.println(
+                    "O produto: " + camiseta.getNome() + " é o mesmo valor do produto: " + tenis.getNome() + "!");
+        }
+
         ProdutoPerecivel[] estoque = {
                 new ProdutoPerecivel("leite integral", 5, 10, "2026-02-20"),
                 new ProdutoPerecivel("queijo", 15, 7, "2026-03-30"),

@@ -1,6 +1,6 @@
 package fase2;
 
-public class Produto2 {
+public class Produto2 implements Comparavel {
     protected String nome;
     protected double preco;
     protected int quantidade;
@@ -40,6 +40,12 @@ public class Produto2 {
     public void descricaoProduto() {
         System.out.println("Produto: " + getNome() + " - R$ " + getPreco() + " - Qtd: " + getQuantidade() + " - Total: "
                 + valorTotalEstoque());
+    }
+
+    @Override
+    public int comparar(Object outro) {
+        Produto2 outroProduto = (Produto2) outro;
+        return (int) (this.getPreco() - outroProduto.getPreco());
     }
 
     public Produto2(String nome, double preco, int quantidade) {
