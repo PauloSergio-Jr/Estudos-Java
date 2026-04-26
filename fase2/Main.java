@@ -79,7 +79,7 @@ public class Main {
         carteira.getDescricao();
         System.out.println();
 
-        ProdutoImportado samsungS22 = new ProdutoImportado("Samsung S22 128gb", 2800);
+        ProdutoImportado samsungS22 = new ProdutoImportado("Samsung S22 128gb", 2800, 5);
         samsungS22.calcularImposto();
         samsungS22.getDescricao();
         System.out.println();
@@ -87,10 +87,18 @@ public class Main {
         ContaBancaria c1 = new ContaBancaria(0);
         c1.depositar(1000);
         c1.exibirSaldo();
-        c1.sacar(300);
-        c1.exibirSaldo();
-        c1.sacar(900);
-        c1.exibirSaldo();
+        try {
+            c1.sacar(300);
+            c1.exibirSaldo();
+        } catch (SaldoInsuficienteException e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            c1.sacar(900);
+            c1.exibirSaldo();
+        } catch (SaldoInsuficienteException e) {
+            System.out.println(e.getMessage());
+        }
         System.out.println();
 
         System.out.println("=== Relatório de Estoque ===");

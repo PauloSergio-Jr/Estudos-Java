@@ -15,9 +15,9 @@ public class ContaBancaria {
         this.saldo = saldo + valor;
     }
 
-    public void sacar(double valor) {
+    public void sacar(double valor) throws SaldoInsuficienteException {
         if (valor > getSaldo()) {
-            System.out.println("Saldo insuficiente!");
+            throw new SaldoInsuficienteException("Saldo insuficiente!");
         } else {
             this.saldo = saldo - valor;
         }
