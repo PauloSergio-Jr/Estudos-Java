@@ -4,6 +4,16 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class AgendaContatos {
+    public static Contato buscarPorNome(ArrayList<Contato> agenda, String nome)
+            throws ContatoNaoEncontradoException {
+        for (Contato contato : agenda) {
+            if (contato.getNome().trim().equals(nome.trim())) {
+                return contato;
+            }
+        }
+        throw new ContatoNaoEncontradoException("Contato " + nome + " não encontrado!");
+    }
+
     public static void main(String[] args) {
         ArrayList<Contato> agenda = new ArrayList<>();
         Scanner leitor = new Scanner(System.in);
@@ -33,15 +43,11 @@ public class AgendaContatos {
                 case 2:
                     System.out.println("Digite o nome do contato:");
                     String procurarC = leitor.nextLine().trim();
-                    boolean encontrado = false;
-                    for (Contato contato : agenda) {
-                        if (contato.getNome().equals(procurarC)) {
-                            encontrado = true;
-                            System.out.println(contato.getNome() + " - " + contato.getNumero());
-                        }
-                    }
-                    if (!encontrado) {
-                        System.out.println("ERRO! Esse contato não existe!");
+                    try {
+                        Contato encontrado = buscarPorNome(agenda, procurarC);
+                        System.out.println(encontrado.getNome() + " - " + encontrado.getNumero());
+                    } catch (ContatoNaoEncontradoException e) {
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 3:
